@@ -7,15 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA9F16A624D320B200401F2D /* AmplitudeVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F16A524D320B200401F2D /* AmplitudeVisualizer.swift */; };
+		FAC4004F24D326570078C6D4 /* VerticalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4004E24D326570078C6D4 /* VerticalBar.swift */; };
 		FAC7907C24A7940C00EA977D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7907B24A7940C00EA977D /* AppDelegate.swift */; };
 		FAC7907E24A7940C00EA977D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7907D24A7940C00EA977D /* SceneDelegate.swift */; };
 		FAC7908024A7940C00EA977D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7907F24A7940C00EA977D /* ContentView.swift */; };
 		FAC7908224A7940F00EA977D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC7908124A7940F00EA977D /* Assets.xcassets */; };
 		FAC7908524A7940F00EA977D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC7908424A7940F00EA977D /* Preview Assets.xcassets */; };
 		FAC7908824A7940F00EA977D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC7908624A7940F00EA977D /* LaunchScreen.storyboard */; };
+		FAC7909124A7944900EA977D /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC7909024A7944900EA977D /* AudioKit.framework */; };
+		FAC7909224A7944900EA977D /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FAC7909024A7944900EA977D /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FAC7909524A7945700EA977D /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC7909424A7945700EA977D /* AudioKitUI.framework */; };
+		FAC7909624A7945700EA977D /* AudioKitUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FAC7909424A7945700EA977D /* AudioKitUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FAC7909824A794D700EA977D /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7909724A794D700EA977D /* Conductor.swift */; };
+		FAC7909D24A798CE00EA977D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC7909C24A798CE00EA977D /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FAC7909324A7944900EA977D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FAC7909624A7945700EA977D /* AudioKitUI.framework in Embed Frameworks */,
+				FAC7909224A7944900EA977D /* AudioKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		FA9F16A524D320B200401F2D /* AmplitudeVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeVisualizer.swift; sourceTree = "<group>"; };
+		FAC4004E24D326570078C6D4 /* VerticalBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalBar.swift; sourceTree = "<group>"; };
 		FAC7907824A7940B00EA977D /* Visualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Visualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC7907B24A7940C00EA977D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC7907D24A7940C00EA977D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +49,11 @@
 		FAC7908424A7940F00EA977D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FAC7908724A7940F00EA977D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAC7908924A7940F00EA977D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAC7909024A7944900EA977D /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = "../../AudioKit-iOS/AudioKit.framework"; sourceTree = "<group>"; };
+		FAC7909424A7945700EA977D /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKitUI.framework; path = "../../AudioKit-iOS/AudioKitUI.framework"; sourceTree = "<group>"; };
+		FAC7909724A794D700EA977D /* Conductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conductor.swift; sourceTree = "<group>"; };
+		FAC7909B24A798CE00EA977D /* Visualizer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Visualizer.entitlements; sourceTree = "<group>"; };
+		FAC7909C24A798CE00EA977D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +61,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC7909524A7945700EA977D /* AudioKitUI.framework in Frameworks */,
+				FAC7909124A7944900EA977D /* AudioKit.framework in Frameworks */,
+				FAC7909D24A798CE00EA977D /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA300A0924E7448100E4068C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAC7907F24A7940C00EA977D /* ContentView.swift */,
+				FA9F16A524D320B200401F2D /* AmplitudeVisualizer.swift */,
+				FAC4004E24D326570078C6D4 /* VerticalBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FAA8C38A24E744F800EEEE59 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAC7909724A794D700EA977D /* Conductor.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FAC7906F24A7940B00EA977D = {
 			isa = PBXGroup;
 			children = (
 				FAC7907A24A7940B00EA977D /* Visualizer */,
 				FAC7907924A7940B00EA977D /* Products */,
+				FAC7908F24A7944900EA977D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,9 +108,11 @@
 		FAC7907A24A7940B00EA977D /* Visualizer */ = {
 			isa = PBXGroup;
 			children = (
+				FAC7909B24A798CE00EA977D /* Visualizer.entitlements */,
 				FAC7907B24A7940C00EA977D /* AppDelegate.swift */,
 				FAC7907D24A7940C00EA977D /* SceneDelegate.swift */,
-				FAC7907F24A7940C00EA977D /* ContentView.swift */,
+				FAA8C38A24E744F800EEEE59 /* Models */,
+				FA300A0924E7448100E4068C /* Views */,
 				FAC7908124A7940F00EA977D /* Assets.xcassets */,
 				FAC7908624A7940F00EA977D /* LaunchScreen.storyboard */,
 				FAC7908924A7940F00EA977D /* Info.plist */,
@@ -75,6 +129,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		FAC7908F24A7944900EA977D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAC7909C24A798CE00EA977D /* AudioToolbox.framework */,
+				FAC7909424A7945700EA977D /* AudioKitUI.framework */,
+				FAC7909024A7944900EA977D /* AudioKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,6 +149,7 @@
 				FAC7907424A7940B00EA977D /* Sources */,
 				FAC7907524A7940B00EA977D /* Frameworks */,
 				FAC7907624A7940B00EA977D /* Resources */,
+				FAC7909324A7944900EA977D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,9 +211,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9F16A624D320B200401F2D /* AmplitudeVisualizer.swift in Sources */,
 				FAC7907C24A7940C00EA977D /* AppDelegate.swift in Sources */,
 				FAC7907E24A7940C00EA977D /* SceneDelegate.swift in Sources */,
+				FAC4004F24D326570078C6D4 /* VerticalBar.swift in Sources */,
 				FAC7908024A7940C00EA977D /* ContentView.swift in Sources */,
+				FAC7909824A794D700EA977D /* Conductor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -284,15 +352,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Visualizer/Visualizer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Visualizer/Preview Content\"";
 				DEVELOPMENT_TEAM = L2FL95P32D;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"/Users/macbook/Sync/Code/Xcode/AudioDev/AudioKit-iOS\"",
+					"\"/Users/macbook/Sync/Code/Xcode/HapticsDev/lofelt-studio-0.8.2-mac/sdk/ios-framework/universal\"",
+				);
 				INFOPLIST_FILE = Visualizer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MattPfeiffer.Visualizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -304,15 +378,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Visualizer/Visualizer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Visualizer/Preview Content\"";
 				DEVELOPMENT_TEAM = L2FL95P32D;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"/Users/macbook/Sync/Code/Xcode/AudioDev/AudioKit-iOS\"",
+					"\"/Users/macbook/Sync/Code/Xcode/HapticsDev/lofelt-studio-0.8.2-mac/sdk/ios-framework/universal\"",
+				);
 				INFOPLIST_FILE = Visualizer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MattPfeiffer.Visualizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

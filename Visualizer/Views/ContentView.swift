@@ -9,13 +9,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var conductor: Conductor
+    
     var body: some View {
-        Text("Hello, World!")
+        AmplitudeVisualizer(amplitudes: $conductor.amplitudes)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(Conductor.shared)
     }
 }
