@@ -6,6 +6,10 @@
   </kbd>
 </p>
 
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=rzEkg2ria1I"><img src="Images/VisualizerThumbnail2.png" alt="Audio Visualizer Video Link"></a>
+</div>
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rzEkg2ria1I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
