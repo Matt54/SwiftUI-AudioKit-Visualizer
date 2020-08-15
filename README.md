@@ -7,5 +7,7 @@
 </p>
 
 <p align="center">
-  [!["Audio Visualizer Video Link"](https://img.youtube.com/vi/rzEkg2ria1I/hqdefault.jpg)](https://www.youtube.com/watch?v=rzEkg2ria1I)
+  <kbd>
+    [!["Audio Visualizer Video Link"](https://img.youtube.com/vi/rzEkg2ria1I/hqdefault.jpg)](https://www.youtube.com/watch?v=rzEkg2ria1I)
+  </kbd>
 </p>
