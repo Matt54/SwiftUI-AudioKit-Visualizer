@@ -6,8 +6,5 @@
   </kbd>
 </p>
 
-<p align="center">
-  <kbd>
-    [!["Audio Visualizer Video Link"](https://img.youtube.com/vi/rzEkg2ria1I/hqdefault.jpg)](https://www.youtube.com/watch?v=rzEkg2ria1I)
-  </kbd>
-</p>
+[!["Audio Visualizer Video Link"](Images/VisualizerThumbnail.png)](https://www.youtube.com/watch?v=rzEkg2ria1I)
+
