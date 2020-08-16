@@ -22,7 +22,7 @@ struct VerticalBar: View {
                 Rectangle()
                     .fill(LinearGradient(gradient: Gradient(colors: [.red, .yellow, .green]), startPoint: .top, endPoint: .center))
                 
-                    // blue/purple bar style
+                    // blue/purple bar style - try switching this out with the .fill statement above
                     //.fill(LinearGradient(gradient: Gradient(colors: [Color.init(red: 0.0, green: 1.0, blue: 1.0), .blue, .purple]), startPoint: .top, endPoint: .bottom))
                 
                 // Dynamic black mask padded from bottom in relation to the amplitude

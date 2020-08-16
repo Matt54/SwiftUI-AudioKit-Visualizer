@@ -8,7 +8,7 @@
 
 import AudioKit
 
-/// Persistent data object
+/// The persistent data object of the application (it does the audio processing and publishes changes to the UI)
 final class Conductor : ObservableObject{
 
     /// Single shared data model
@@ -35,20 +35,25 @@ final class Conductor : ObservableObject{
     /// limiter to prevent excessive volume at the output - just in case, it's the music producer in me :)
     let outputLimiter = AKPeakLimiter()
     
-    /// amplitude bar values from (values range from 0.0 to 1.0)
+    /// bin amplitude values (range from 0.0 to 1.0)
     @Published var amplitudes : [Double] = Array(repeating: 0.5, count: 50)
     
+    /// constructor - runs during initialization of the object
     init(){
         
+        // connect the fft tap to the mic mixer (this allows us to analyze the audio at the micMixer node)
         fft = AKFFTTap.init(micMixer)
         
+        // route the audio from the microphone to the limiter
         setupMic()
         
-        setAudioKitSettings()
-        
+        // set the limiter as the last node in our audio chain
         AudioKit.output = outputLimiter
+        
+        // do any AudioKit setting changes before starting the AudioKit engine
+        setAudioKitSettings()
 
-        //START AUDIOKIT
+        // start the AudioKit engine
         do{
             try AudioKit.start()
         }
@@ -56,8 +61,9 @@ final class Conductor : ObservableObject{
             assert(false, error.localizedDescription)
         }
         
+        // create a repeating timer at the rate of our chosen time interval - this updates the amplitudes each timer callback
         Timer.scheduledTimer(withTimeInterval: refreshTimeInterval, repeats: true) { timer in
-            self.checkAudioLevel()
+            self.updateAmplitudes()
         }
 
     }
@@ -85,32 +91,38 @@ final class Conductor : ObservableObject{
         
         // route the silent Mixer to the limiter (you must always route the audio chain to AudioKit.output)
         silentMixer.setOutput(to: outputLimiter)
+        
     }
     
     /// Analyze fft data and write to our amplitudes array
-    @objc func checkAudioLevel(){
+    @objc func updateAmplitudes(){
+        //If you are interested in knowing more about this calculation, I have provided a couple recommended links at the bottom of this file.
         
-        // loop through all the fft bins (by two - we will need to calculate level from real and imaginary parts)
+        // loop by two through all the fft data
         for i in stride(from: 0, to: self.FFT_SIZE - 1, by: 2) {
 
+            // get the real and imaginary parts of the complex number
             let real = fft.fftData[i]
             let imaginary = fft.fftData[i + 1]
             
-            let normBinMag = 2.0 * sqrt(real * real + imaginary * imaginary) / self.FFT_SIZE
-            let amplitude = (20.0 * log10(normBinMag))
+            let normalizedBinMagnitude = 2.0 * sqrt(real * real + imaginary * imaginary) / self.FFT_SIZE
+            let amplitude = (20.0 * log10(normalizedBinMagnitude))
             
-            var revisedAmplitude = (amplitude + 250) / 229.80
-            if (revisedAmplitude < 0) {
-                revisedAmplitude = 0
+            // scale the resulting data
+            var scaledAmplitude = (amplitude + 250) / 229.80
+            
+            // restrict the range to 0.0 - 1.0
+            if (scaledAmplitude < 0) {
+                scaledAmplitude = 0
             }
-            if (revisedAmplitude > 1.0) {
-                revisedAmplitude = 1.0
+            if (scaledAmplitude > 1.0) {
+                scaledAmplitude = 1.0
             }
             
             // add the amplitude to our array (further scaling array to look good in visualizer)
             DispatchQueue.main.async {
                 if(i/2 < self.amplitudes.count){
-                    self.amplitudes[i/2] = self.mapy(n: revisedAmplitude, start1: 0.3, stop1: 0.9, start2: 0.0, stop2: 1.0)
+                    self.amplitudes[i/2] = self.mapy(n: scaledAmplitude, start1: 0.3, stop1: 0.9, start2: 0.0, stop2: 1.0)
                 }
             }
         }
@@ -122,3 +134,20 @@ final class Conductor : ObservableObject{
         return ((n-start1)/(stop1-start1))*(stop2-start2)+start2;
     };
 }
+
+/*
+ Visual introduction to the fourier transform:
+ https://www.youtube.com/watch?v=spUNpyF58BY
+ Shoutout to Grant Sanderson - thank you for your videos!
+ 
+ Discrete fourier transform:
+ https://www.youtube.com/watch?v=nl9TZanwbBk
+ 
+ Fast fourier transform:
+ https://www.youtube.com/watch?v=E8HeD-MUrjY
+ Shoutout to Steve Brunton - thank you for your videos!
+ 
+ Google groups conversation explaining how to use the fft data to calculate bin decibel levels:
+ https://groups.google.com/g/comp.dsp/c/cZsS1ftN5oI?pli=1
+ Shoutout to Stephan M. Sprenger - thank you for sharing!
+ */
