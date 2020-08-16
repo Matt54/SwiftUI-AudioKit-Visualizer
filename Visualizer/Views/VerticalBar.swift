@@ -27,6 +27,7 @@ struct VerticalBar: View {
                 
                 // Dynamic black mask padded from bottom in relation to the amplitude
                 Rectangle()
+                    .fill(Color.black)
                     .mask(Rectangle().padding(.bottom, geometry.size.height * CGFloat(self.amplitude)))
                     .animation(.easeOut(duration: 0.15))
                 

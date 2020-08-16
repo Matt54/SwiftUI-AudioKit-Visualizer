@@ -15,13 +15,13 @@ final class Conductor : ObservableObject{
     static let shared = Conductor()
     
     /// default microphone
-    var mic = AKMicrophone()
+    let mic = AKMicrophone()
     
     /// mixing node for microphone input - routes to plotting and recording paths
-    var micMixer = AKMixer()
+    let micMixer = AKMixer()
     
     /// time interval in seconds for repeating timer callback
-    static var refreshTimeInterval : Double = 0.02
+    let refreshTimeInterval : Double = 0.02
     
     /// tap for the fft data
     let fft : AKFFTTap
@@ -56,7 +56,7 @@ final class Conductor : ObservableObject{
             assert(false, error.localizedDescription)
         }
         
-        Timer.scheduledTimer(withTimeInterval: Conductor.refreshTimeInterval, repeats: true) { timer in
+        Timer.scheduledTimer(withTimeInterval: refreshTimeInterval, repeats: true) { timer in
             self.checkAudioLevel()
         }
 
@@ -93,10 +93,10 @@ final class Conductor : ObservableObject{
         // loop through all the fft bins (by two - we will need to calculate level from real and imaginary parts)
         for i in stride(from: 0, to: self.FFT_SIZE - 1, by: 2) {
 
-            let re = fft.fftData[i]
-            let im = fft.fftData[i + 1]
+            let real = fft.fftData[i]
+            let imaginary = fft.fftData[i + 1]
             
-            let normBinMag = 2.0 * sqrt(re * re + im * im) / self.FFT_SIZE
+            let normBinMag = 2.0 * sqrt(real * real + imaginary * imaginary) / self.FFT_SIZE
             let amplitude = (20.0 * log10(normBinMag))
             
             var revisedAmplitude = (amplitude + 250) / 229.80
@@ -107,6 +107,7 @@ final class Conductor : ObservableObject{
                 revisedAmplitude = 1.0
             }
             
+            // add the amplitude to our array (further scaling array to look good in visualizer)
             DispatchQueue.main.async {
                 if(i/2 < self.amplitudes.count){
                     self.amplitudes[i/2] = self.mapy(n: revisedAmplitude, start1: 0.3, stop1: 0.9, start2: 0.0, stop2: 1.0)
@@ -116,6 +117,7 @@ final class Conductor : ObservableObject{
         
     }
     
+    /// simple mapping function to scale a value to a different range
     func mapy(n:Double, start1:Double, stop1:Double, start2:Double, stop2:Double) -> Double {
         return ((n-start1)/(stop1-start1))*(stop2-start2)+start2;
     };
