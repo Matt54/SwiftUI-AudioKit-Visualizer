@@ -26,6 +26,8 @@
 		E66A3947275B734300DCA776 /* Visualizer--macOS--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E66A3946275B734300DCA776 /* Visualizer--macOS--Info.plist */; };
 		E66A3949275B762E00DCA776 /* VisualizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66A3948275B762E00DCA776 /* VisualizerApp.swift */; };
 		E66A394A275B762E00DCA776 /* VisualizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66A3948275B762E00DCA776 /* VisualizerApp.swift */; };
+		E6CD6FB6275BB91300B2505E /* AmplitudeVisualizerCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CD6FB5275BB91300B2505E /* AmplitudeVisualizerCanvas.swift */; };
+		E6CD6FB7275BB91300B2505E /* AmplitudeVisualizerCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CD6FB5275BB91300B2505E /* AmplitudeVisualizerCanvas.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,7 @@
 		E66A3938275B6BE000DCA776 /* VerticalBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalBar.swift; sourceTree = "<group>"; };
 		E66A3946275B734300DCA776 /* Visualizer--macOS--Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Visualizer--macOS--Info.plist"; path = "../../.Trash/Visualizer--macOS--Info.plist"; sourceTree = "<group>"; };
 		E66A3948275B762E00DCA776 /* VisualizerApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualizerApp.swift; sourceTree = "<group>"; };
+		E6CD6FB5275BB91300B2505E /* AmplitudeVisualizerCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeVisualizerCanvas.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,7 @@
 			children = (
 				E66A3948275B762E00DCA776 /* VisualizerApp.swift */,
 				E66A3933275B6BB700DCA776 /* Conductor.swift */,
+				E6CD6FB5275BB91300B2505E /* AmplitudeVisualizerCanvas.swift */,
 				E66A3936275B6BE000DCA776 /* AmplitudeVisualizer.swift */,
 				E66A3937275B6BE000DCA776 /* ContentView.swift */,
 				E66A3938275B6BE000DCA776 /* VerticalBar.swift */,
@@ -330,6 +334,7 @@
 				E66A393D275B6BE000DCA776 /* VerticalBar.swift in Sources */,
 				E66A3934275B6BB700DCA776 /* Conductor.swift in Sources */,
 				E66A3949275B762E00DCA776 /* VisualizerApp.swift in Sources */,
+				E6CD6FB6275BB91300B2505E /* AmplitudeVisualizerCanvas.swift in Sources */,
 				E66A393B275B6BE000DCA776 /* ContentView.swift in Sources */,
 				E66A3939275B6BE000DCA776 /* AmplitudeVisualizer.swift in Sources */,
 			);
@@ -342,6 +347,7 @@
 				E66A393E275B6BE000DCA776 /* VerticalBar.swift in Sources */,
 				E66A3935275B6BB700DCA776 /* Conductor.swift in Sources */,
 				E66A394A275B762E00DCA776 /* VisualizerApp.swift in Sources */,
+				E6CD6FB7275BB91300B2505E /* AmplitudeVisualizerCanvas.swift in Sources */,
 				E66A393C275B6BE000DCA776 /* ContentView.swift in Sources */,
 				E66A393A275B6BE000DCA776 /* AmplitudeVisualizer.swift in Sources */,
 			);

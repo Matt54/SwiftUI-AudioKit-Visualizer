@@ -13,7 +13,7 @@ struct ContentView: View {
   @EnvironmentObject var conductor: Conductor
 
   var body: some View {
-    AmplitudeVisualizer(amplitudes: $conductor.amplitudes)
+    AmplitudeVisualizer(amplitudes: conductor.amplitudes)
       .edgesIgnoringSafeArea(.all)
   }
 }
