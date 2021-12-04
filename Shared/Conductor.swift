@@ -35,7 +35,7 @@ final class Conductor: ObservableObject {
   var outputLimiter: PeakLimiter?
 
   /// bin amplitude values (range from 0.0 to 1.0)
-  @Published var amplitudes: [Double] = Array(repeating: 0.5, count: 50)
+  @Published var amplitudes: [Double] = Array(repeating: 0.5, count: 150)
 
   /// constructor - runs during initialization of the object
   init() {
@@ -44,7 +44,8 @@ final class Conductor: ObservableObject {
       mic = input
       if let inputAudio = mic {
         micMixer = Mixer(inputAudio)
-          fft = FFTTap(inputAudio, handler: updateAmplitudes)
+        fft = FFTTap(inputAudio, handler: updateAmplitudes)
+        fft?.isNormalized = false
 
         // route the silent Mixer to the limiter (you must always route the audio chain to AudioKit.output)
         outputLimiter = PeakLimiter(micMixer!)
@@ -60,14 +61,14 @@ final class Conductor: ObservableObject {
 
     do {
       try engine.start()
-        fft?.start()
+      fft?.start()
     } catch {
       assert(false, error.localizedDescription)
     }
   }
 
   /// Analyze fft data and write to our amplitudes array
-    func updateAmplitudes(fftData: [Float]) {
+  func updateAmplitudes(fftData: [Float]) {
     //If you are interested in knowing more about this calculation, I have provided a couple recommended links at the bottom of this file.
 
     // loop by two through all the fft data
@@ -95,8 +96,7 @@ final class Conductor: ObservableObject {
       // add the amplitude to our array (further scaling array to look good in visualizer)
       DispatchQueue.main.async {
         if i / 2 < self.amplitudes.count {
-          self.amplitudes[i / 2] = self.mapy(
-            n: Double(scaledAmplitude), start1: 0.3, stop1: 0.9, start2: 0.0, stop2: 1.0)
+          self.amplitudes[i / 2] = Double(scaledAmplitude)
         }
       }
     }
