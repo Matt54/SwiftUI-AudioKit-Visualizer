@@ -35,7 +35,7 @@ struct VerticalBar: View {
         Rectangle()
           .fill(Color.black)
           .mask(Rectangle().padding(.bottom, geometry.size.height * CGFloat(self.amplitude)))
-//          .animation(.easeOut(duration: 0.15), value: amplitude)
+          .animation(.easeOut(duration: 0.15), value: amplitude)
 
         // White bar with slower animation for floating effect
         Rectangle()
@@ -44,7 +44,7 @@ struct VerticalBar: View {
           .offset(
             x: 0.0, y: -geometry.size.height * CGFloat(self.amplitude) - geometry.size.height * 0.02
           )
-//          .animation(.easeOut(duration: 0.6), value: amplitude)
+          .animation(.easeOut(duration: 0.6), value: amplitude)
 
       }
       .padding(geometry.size.width * 0.1)

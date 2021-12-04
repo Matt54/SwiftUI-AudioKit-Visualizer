@@ -44,7 +44,7 @@ final class Conductor: ObservableObject {
       mic = input
       if let inputAudio = mic {
         micMixer = Mixer(inputAudio)
-        fft = FFTTap(inputAudio, bufferSize: 1024,handler: updateAmplitudes)
+        fft = FFTTap(inputAudio, bufferSize: 4096, handler: updateAmplitudes)
         fft?.isNormalized = false
 
         // route the silent Mixer to the limiter (you must always route the audio chain to AudioKit.output)
