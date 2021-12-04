@@ -44,7 +44,7 @@ final class Conductor: ObservableObject {
       mic = input
       if let inputAudio = mic {
         micMixer = Mixer(inputAudio)
-        fft = FFTTap(micMixer!) { _ in }
+          fft = FFTTap(inputAudio, handler: updateAmplitudes)
 
         // route the silent Mixer to the limiter (you must always route the audio chain to AudioKit.output)
         outputLimiter = PeakLimiter(micMixer!)
@@ -60,27 +60,22 @@ final class Conductor: ObservableObject {
 
     do {
       try engine.start()
+        fft?.start()
     } catch {
       assert(false, error.localizedDescription)
     }
-
-    // create a repeating timer at the rate of our chosen time interval - this updates the amplitudes each timer callback
-    Timer.scheduledTimer(withTimeInterval: refreshTimeInterval, repeats: true) { timer in
-      self.updateAmplitudes()
-    }
-
   }
 
   /// Analyze fft data and write to our amplitudes array
-  @objc func updateAmplitudes() {
+    func updateAmplitudes(fftData: [Float]) {
     //If you are interested in knowing more about this calculation, I have provided a couple recommended links at the bottom of this file.
 
     // loop by two through all the fft data
     for i in stride(from: 0, to: self.FFT_SIZE - 1, by: 2) {
 
       // get the real and imaginary parts of the complex number
-      let real = fft!.fftData[i]
-      let imaginary = fft!.fftData[i + 1]
+      let real = fftData[i]
+      let imaginary = fftData[i + 1]
 
       let normalizedBinMagnitude =
         2.0 * sqrt(real * real + imaginary * imaginary) / Float(self.FFT_SIZE)
