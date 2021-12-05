@@ -8,12 +8,9 @@
 
 import SwiftUI
 
-struct AmplitudeVisualizer: View {
+struct AmplitudeVisualizerForEach: AmplitudeVisualizer {
 
-  @ObservedObject var conductor: Conductor
-  var amplitudes: [Double] {
-    conductor.amplitudes
-  }
+  var amplitudes: [Double]
 
   var body: some View {
     HStack(spacing: 0.0) {
@@ -27,6 +24,6 @@ struct AmplitudeVisualizer: View {
 
 struct AmplitudeVisualizer_Previews: PreviewProvider {
   static var previews: some View {
-    AmplitudeVisualizer(conductor: Conductor())
+    AmplitudeVisualizerForEach(amplitudes: [0.2, 0.3, 0.1])
   }
 }

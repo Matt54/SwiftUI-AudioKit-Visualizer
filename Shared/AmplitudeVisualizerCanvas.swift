@@ -1,11 +1,8 @@
 import SwiftUI
 
-struct AmplitudeVisualizerCanvas: View {
+struct AmplitudeVisualizerCanvas: AmplitudeVisualizer {
 
-  @ObservedObject var conductor: Conductor
-  var amplitudes: [Double] {
-    conductor.amplitudes
-  }
+  var amplitudes: [Double]
 
   var body: some View {
     Canvas(opaque: true, colorMode: .linear, rendersAsynchronously: true) { context, size in
@@ -21,7 +18,7 @@ struct AmplitudeVisualizerCanvas: View {
         let barPath = Rectangle().path(in: barRect)
 
         // make a gradient shading
-        let gradient = Gradient(colors: [.green, .blue])
+        let gradient = Gradient(colors: [.cyan, .blue])
         let startPoint = barRect.origin
         let endPoint = CGPoint(x: barRect.width + startPoint.x, y: barRect.height + startPoint.y)
         let gradientShading = GraphicsContext.Shading.linearGradient(
@@ -38,6 +35,6 @@ struct AmplitudeVisualizerCanvas: View {
 
 struct AmplitudeVisualizerCanvas_Previews: PreviewProvider {
   static var previews: some View {
-    AmplitudeVisualizer(conductor: Conductor())
+    AmplitudeVisualizerCanvas(amplitudes: [0.0, 0.1, 1.1, 0.5])
   }
 }

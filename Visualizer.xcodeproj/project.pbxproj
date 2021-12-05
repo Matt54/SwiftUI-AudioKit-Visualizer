@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E62512C9275C447400B29B17 /* withObservedConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62512C8275C447400B29B17 /* withObservedConductor.swift */; };
+		E62512CA275C447400B29B17 /* withObservedConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62512C8275C447400B29B17 /* withObservedConductor.swift */; };
 		E66A390D275B6B8D00DCA776 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66A390C275B6B8D00DCA776 /* Tests_iOS.swift */; };
 		E66A390F275B6B8D00DCA776 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66A390E275B6B8D00DCA776 /* Tests_iOSLaunchTests.swift */; };
 		E66A3919275B6B8D00DCA776 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66A3918275B6B8D00DCA776 /* Tests_macOS.swift */; };
@@ -15,8 +17,8 @@
 		E66A3921275B6B8D00DCA776 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E66A38F6275B6B8D00DCA776 /* Assets.xcassets */; };
 		E66A3934275B6BB700DCA776 /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66A3933275B6BB700DCA776 /* Conductor.swift */; };
 		E66A3935275B6BB700DCA776 /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66A3933275B6BB700DCA776 /* Conductor.swift */; };
-		E66A3939275B6BE000DCA776 /* AmplitudeVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66A3936275B6BE000DCA776 /* AmplitudeVisualizer.swift */; };
-		E66A393A275B6BE000DCA776 /* AmplitudeVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66A3936275B6BE000DCA776 /* AmplitudeVisualizer.swift */; };
+		E66A3939275B6BE000DCA776 /* AmplitudeVisualizerForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66A3936275B6BE000DCA776 /* AmplitudeVisualizerForEach.swift */; };
+		E66A393A275B6BE000DCA776 /* AmplitudeVisualizerForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66A3936275B6BE000DCA776 /* AmplitudeVisualizerForEach.swift */; };
 		E66A393B275B6BE000DCA776 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66A3937275B6BE000DCA776 /* ContentView.swift */; };
 		E66A393C275B6BE000DCA776 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66A3937275B6BE000DCA776 /* ContentView.swift */; };
 		E66A393D275B6BE000DCA776 /* VerticalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66A3938275B6BE000DCA776 /* VerticalBar.swift */; };
@@ -48,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E62512C8275C447400B29B17 /* withObservedConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = withObservedConductor.swift; sourceTree = "<group>"; };
 		E66A38F6275B6B8D00DCA776 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E66A38FB275B6B8D00DCA776 /* Visualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Visualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66A3901275B6B8D00DCA776 /* Visualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Visualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,7 +62,7 @@
 		E66A3918275B6B8D00DCA776 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		E66A391A275B6B8D00DCA776 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		E66A3933275B6BB700DCA776 /* Conductor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conductor.swift; sourceTree = "<group>"; };
-		E66A3936275B6BE000DCA776 /* AmplitudeVisualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplitudeVisualizer.swift; sourceTree = "<group>"; };
+		E66A3936275B6BE000DCA776 /* AmplitudeVisualizerForEach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplitudeVisualizerForEach.swift; sourceTree = "<group>"; };
 		E66A3937275B6BE000DCA776 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E66A3938275B6BE000DCA776 /* VerticalBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalBar.swift; sourceTree = "<group>"; };
 		E66A3946275B734300DCA776 /* Visualizer--macOS--Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Visualizer--macOS--Info.plist"; path = "../../.Trash/Visualizer--macOS--Info.plist"; sourceTree = "<group>"; };
@@ -119,7 +122,8 @@
 				E66A3948275B762E00DCA776 /* VisualizerApp.swift */,
 				E66A3933275B6BB700DCA776 /* Conductor.swift */,
 				E6CD6FB5275BB91300B2505E /* AmplitudeVisualizerCanvas.swift */,
-				E66A3936275B6BE000DCA776 /* AmplitudeVisualizer.swift */,
+				E66A3936275B6BE000DCA776 /* AmplitudeVisualizerForEach.swift */,
+				E62512C8275C447400B29B17 /* withObservedConductor.swift */,
 				E66A3937275B6BE000DCA776 /* ContentView.swift */,
 				E66A3938275B6BE000DCA776 /* VerticalBar.swift */,
 				E66A38F6275B6B8D00DCA776 /* Assets.xcassets */,
@@ -335,8 +339,9 @@
 				E66A3934275B6BB700DCA776 /* Conductor.swift in Sources */,
 				E66A3949275B762E00DCA776 /* VisualizerApp.swift in Sources */,
 				E6CD6FB6275BB91300B2505E /* AmplitudeVisualizerCanvas.swift in Sources */,
+				E62512C9275C447400B29B17 /* withObservedConductor.swift in Sources */,
 				E66A393B275B6BE000DCA776 /* ContentView.swift in Sources */,
-				E66A3939275B6BE000DCA776 /* AmplitudeVisualizer.swift in Sources */,
+				E66A3939275B6BE000DCA776 /* AmplitudeVisualizerForEach.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,8 +353,9 @@
 				E66A3935275B6BB700DCA776 /* Conductor.swift in Sources */,
 				E66A394A275B762E00DCA776 /* VisualizerApp.swift in Sources */,
 				E6CD6FB7275BB91300B2505E /* AmplitudeVisualizerCanvas.swift in Sources */,
+				E62512CA275C447400B29B17 /* withObservedConductor.swift in Sources */,
 				E66A393C275B6BE000DCA776 /* ContentView.swift in Sources */,
-				E66A393A275B6BE000DCA776 /* AmplitudeVisualizer.swift in Sources */,
+				E66A393A275B6BE000DCA776 /* AmplitudeVisualizerForEach.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
