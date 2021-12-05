@@ -20,19 +20,12 @@ struct VerticalBar: View {
         // Colored rectangle in back of ZStack
         Rectangle()
           .fill(
-            LinearGradient(
-              gradient: Gradient(colors: [
-                .cyan, .blue,
-              ]), startPoint: .top, endPoint: .bottom))
-
-        // Dynamic black mask padded from bottom in relation to the amplitude
-        Rectangle()
-          .fill(Color.black)
-          .mask(Rectangle().padding(.bottom, geometry.size.height * CGFloat(self.amplitude)))
-        //          .animation(.easeOut(duration: 0.15), value: amplitude)
+            .blue
+            )
+          .border(Color.black, width: 0.5)
+          .frame(width: geometry.size.width * 1, height: geometry.size.height * amplitude)
+          .offset(x: 0, y: geometry.size.height * (1 - amplitude))
       }
-      .padding(geometry.size.width * 0.1)
-      .border(Color.black, width: geometry.size.width * 0.1)
     }
   }
 
