@@ -6,9 +6,7 @@ protocol AmplitudeVisualizer: View {
 
 struct withObservedConductor<C: AmplitudeVisualizer>: View {
   @ObservedObject var conductor: Conductor
-  init(conductor: Conductor) {
-    self.conductor = conductor
-  }
+
   var body: some View {
     C.init(amplitudes: conductor.amplitudes)
   }
