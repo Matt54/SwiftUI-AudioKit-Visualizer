@@ -22,7 +22,6 @@ struct AmplitudeVisualizerCanvas: AmplitudeVisualizer {
 
         context.fill(
           barPath, with: shading)
-
       }
     }
     .background(Color.black)

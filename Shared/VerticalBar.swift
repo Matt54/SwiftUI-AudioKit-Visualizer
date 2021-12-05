@@ -21,7 +21,7 @@ struct VerticalBar: View {
         Rectangle()
           .fill(
             .blue
-            )
+          )
           .border(Color.black, width: 0.5)
           .frame(width: geometry.size.width * 1, height: geometry.size.height * amplitude)
           .offset(x: 0, y: geometry.size.height * (1 - amplitude))
