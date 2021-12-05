@@ -38,13 +38,13 @@ struct VerticalBar: View {
           .animation(.easeOut(duration: 0.15), value: amplitude)
 
         // White bar with slower animation for floating effect
-        Rectangle()
-          .fill(Color.white)
-          .frame(height: geometry.size.height * 0.005)
-          .offset(
-            x: 0.0, y: -geometry.size.height * CGFloat(self.amplitude) - geometry.size.height * 0.02
-          )
-          .animation(.easeOut(duration: 0.6), value: amplitude)
+        //        Rectangle()
+        //          .fill(Color.white)
+        //          .frame(height: geometry.size.height * 0.005)
+        //          .offset(
+        //            x: 0.0, y: -geometry.size.height * CGFloat(self.amplitude) - geometry.size.height * 0.02
+        //          )
+        //          .animation(.easeOut(duration: 0.6), value: amplitude)
 
       }
       .padding(geometry.size.width * 0.1)

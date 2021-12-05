@@ -2,7 +2,10 @@ import SwiftUI
 
 struct AmplitudeVisualizerCanvas: View {
 
-  var amplitudes: [Double]
+  @ObservedObject var conductor: Conductor
+  var amplitudes: [Double] {
+    conductor.amplitudes
+  }
 
   var body: some View {
     Canvas(opaque: true, colorMode: .linear, rendersAsynchronously: true) { context, size in
@@ -35,6 +38,6 @@ struct AmplitudeVisualizerCanvas: View {
 
 struct AmplitudeVisualizerCanvas_Previews: PreviewProvider {
   static var previews: some View {
-    AmplitudeVisualizer(amplitudes: Array(repeating: 1.0, count: 50))
+    AmplitudeVisualizer(conductor: Conductor())
   }
 }

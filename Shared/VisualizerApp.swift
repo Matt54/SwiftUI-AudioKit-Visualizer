@@ -4,8 +4,7 @@ import SwiftUI
 struct VisualizerApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView()
-        .environmentObject(Conductor())
+      ContentView(conductor: Conductor())
     }
   }
 }
