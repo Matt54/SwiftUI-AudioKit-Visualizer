@@ -12,6 +12,7 @@
 		61FD94C62BA1FE5C00CF52E3 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 61FD94C52BA1FE5C00CF52E3 /* AudioKit */; };
 		61FD94C92BA1FE7A00CF52E3 /* AudioKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 61FD94C82BA1FE7A00CF52E3 /* AudioKitUI */; };
 		61FD94CB2BA1FF6900CF52E3 /* AudioVisualization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FD94CA2BA1FF6900CF52E3 /* AudioVisualization.swift */; };
+		61FD94CF2BA204D600CF52E3 /* Guitar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 61FD94CE2BA204D600CF52E3 /* Guitar.mp3 */; };
 		FAC7908224A7940F00EA977D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC7908124A7940F00EA977D /* Assets.xcassets */; };
 		FAC7908524A7940F00EA977D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC7908424A7940F00EA977D /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -33,7 +34,8 @@
 		61FD94C02BA1FD7800CF52E3 /* Conductors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conductors.swift; sourceTree = "<group>"; };
 		61FD94C22BA1FDC000CF52E3 /* VisualizerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerApp.swift; sourceTree = "<group>"; };
 		61FD94CA2BA1FF6900CF52E3 /* AudioVisualization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioVisualization.swift; sourceTree = "<group>"; };
-		FAC7907824A7940B00EA977D /* Visualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Visualizer.app; path = "/Users/alaa/Developer/Git/Contribution/SwiftUI-AudioKit-Visualizer/build/Debug-iphoneos/Visualizer.app"; sourceTree = "<absolute>"; };
+		61FD94CC2BA2034A00CF52E3 /* Visualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Visualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		61FD94CE2BA204D600CF52E3 /* Guitar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Guitar.mp3; sourceTree = "<group>"; };
 		FAC7908124A7940F00EA977D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAC7908424A7940F00EA977D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FAC7908924A7940F00EA977D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		61FD94CD2BA204C600CF52E3 /* MusicSamples */ = {
+			isa = PBXGroup;
+			children = (
+				61FD94CE2BA204D600CF52E3 /* Guitar.mp3 */,
+			);
+			path = MusicSamples;
+			sourceTree = "<group>";
+		};
 		FA300A0924E7448100E4068C /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC7907A24A7940B00EA977D /* Visualizer */,
+				61FD94CC2BA2034A00CF52E3 /* Visualizer.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +96,7 @@
 				FA300A0924E7448100E4068C /* Views */,
 				FAC7908124A7940F00EA977D /* Assets.xcassets */,
 				FAC7908924A7940F00EA977D /* Info.plist */,
+				61FD94CD2BA204C600CF52E3 /* MusicSamples */,
 				FAC7908324A7940F00EA977D /* Preview Content */,
 			);
 			path = Visualizer;
@@ -120,7 +132,7 @@
 				61FD94C82BA1FE7A00CF52E3 /* AudioKitUI */,
 			);
 			productName = Visualizer;
-			productReference = FAC7907824A7940B00EA977D /* Visualizer.app */;
+			productReference = 61FD94CC2BA2034A00CF52E3 /* Visualizer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -166,6 +178,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61FD94CF2BA204D600CF52E3 /* Guitar.mp3 in Resources */,
 				FAC7908524A7940F00EA977D /* Preview Assets.xcassets in Resources */,
 				FAC7908224A7940F00EA977D /* Assets.xcassets in Resources */,
 			);

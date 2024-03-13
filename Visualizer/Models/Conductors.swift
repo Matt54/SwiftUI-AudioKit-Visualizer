@@ -36,3 +36,32 @@ class InputConductor: HasAudioEngine {
         }
     }
 }
+
+// MARK: - Music Player
+
+// To have the `URL` struct available in the scope
+import UniformTypeIdentifiers
+
+@Observable
+class MusicPlayerConductor: HasAudioEngine, ProcessesPlayerInput {
+    let engine = AudioEngine()
+    
+    let player: AudioPlayer
+    let outputMixer: Mixer
+    
+    init(musicUrl: URL = Bundle.main.url(forResource: "Guitar", withExtension: "mp3")!) {
+        player = AudioPlayer(url: musicUrl)!
+        
+        engine.output = player
+        player.isLooping = true
+        outputMixer = Mixer(player)
+        
+        engine.output = outputMixer
+        
+        do {
+            try engine.start()
+        } catch {
+            print(error)
+        }
+    }
+}
